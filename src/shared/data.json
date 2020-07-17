@@ -1,0 +1,46 @@
+{
+  "items": [
+    {
+      "id": "1",
+      "url": "https://s.ftcdn.net/v2013/pics/all/curated/RKyaEDwp8J7JKeZWQPuOVWvkUjGQfpCx_cover_580.jpg",
+      "author": "Mike Smith",
+      "title": "My awesome photo 1",
+      "date": "25.10.2019"
+    },
+    {
+      "id": "2",
+      "url": "https://www.gettyimages.com/gi-resources/images/500px/983794168.jpg",
+      "author": "Jessica Morel",
+      "title": "My awesome photo 2",
+      "date": "25.10.2019"
+    },
+    {
+      "id": "3",
+      "url": "https://image.shutterstock.com/image-photo/closeup-nature-view-green-leaf-260nw-1038842551.jpg",
+      "author": "Jack Mack",
+      "title": "My awesome photo 3",
+      "date": "25.10.2019"
+    },
+    {
+      "id": "4",
+      "url": "https://www.imago-images.com/imagoextern/bilder/stockfotos/en/imago-images-aurora-borealis.jpg",
+      "author": "Adam Niro",
+      "title": "My awesome photo 4",
+      "date": "25.10.2019"
+    },
+    {
+      "id": "5",
+      "url": "https://html5css.ru/css/paris.jpg",
+      "author": "Eva Niro",
+      "title": "My awesome photo 5",
+      "date": "25.10.2019"
+    },
+    {
+      "id": "6",
+      "url": "https://www.w3schools.com/w3css/img_lights.jpg",
+      "author": "Sam Niro",
+      "title": "My awesome photo 6",
+      "date": "25.10.2019"
+    }
+  ]
+}
