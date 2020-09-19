@@ -29,11 +29,6 @@ export default StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between'
   },
-  iconContainer: {
-    borderRadius: 50,
-    padding: 7,
-    backgroundColor: 'rgba(0, 0, 0, 0.5)'
-  },
   marginRight: { marginRight: 9 },
   flexCenter: { justifyContent: 'center' },
   title: {
