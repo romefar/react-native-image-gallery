@@ -1,10 +1,11 @@
-import React, { useState } from 'react'
-import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome'
+import React, { useCallback, useState } from 'react'
 import { faTrash } from '@fortawesome/free-solid-svg-icons'
 import { FlatList, Text, TouchableOpacity, View, Image } from 'react-native'
 import ImageViewerWrapper from '../ImageViewer'
-import LoadingSpinner from '../LoadingSpinner'
+import LoadingSpinner from '../../shared/components/LoadingSpinner'
 import { ImageInfo } from '../../types/images.type'
+import { Icon } from '../../shared/components/Icon'
+
 import styles from './ImageListStyles'
 
 const ImageList: React.FC<{
@@ -18,16 +19,19 @@ const ImageList: React.FC<{
   const [isOverlayMode, setOverlayMode] = useState(false)
   const [selectedId, setSelectedId] = useState(0)
 
-  const handleOnClose = (): void => {
+  const handleOnClose = useCallback((): void => {
     setSelectedId(0)
     setViewerVisible(false)
-  }
+  }, [])
 
-  const handleOnPress = (id: number): void => {
-    const index = items.findIndex((item) => item.id === id)
-    setSelectedId(index)
-    setViewerVisible(true)
-  }
+  const handleOnPress = useCallback(
+    (id: number): void => {
+      const index = items.findIndex((item) => item.id === id)
+      setSelectedId(index)
+      setViewerVisible(true)
+    },
+    [items]
+  )
 
   const renderItem = ({ item }: { item: ImageInfo }): JSX.Element => {
     const { id, author, date, title, url } = item
@@ -47,16 +51,19 @@ const ImageList: React.FC<{
     )
   }
 
-  const clearImages = (): void => {
+  const clearImages = useCallback((): void => {
     setOverlayMode(true)
     onClear()
-  }
+  }, [onClear])
 
   const renderClearButton = (): JSX.Element => {
     return (
-      <TouchableOpacity style={styles.clearButton} onPress={clearImages}>
-        <FontAwesomeIcon icon={faTrash} color="black" size={25} />
-      </TouchableOpacity>
+      <Icon
+        icon={faTrash}
+        color="black"
+        style={styles.clearButton}
+        onPress={clearImages}
+      />
     )
   }
 
