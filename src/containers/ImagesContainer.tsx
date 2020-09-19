@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useCallback, useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { fetchImages, clearImages } from '../redux/images.dispatchers'
 import ImageList from '../components/ImageList'
@@ -10,9 +10,9 @@ export const ImagesContainer = (): JSX.Element => {
   const error = useSelector(imagesSelectors.images.error)
   const isLoading = useSelector(imagesSelectors.images.isLoading)
 
-  const handleClearImages = () => {
+  const handleClearImages = useCallback(() => {
     clearImages(dispatch)()
-  }
+  }, [dispatch])
 
   useEffect(() => {
     fetchImages(dispatch)()
